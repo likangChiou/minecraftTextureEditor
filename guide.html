@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft 貼圖大師 - 使用說明</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4A7C59 0%, #6B8E23 50%, #8FBC8F 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 0;
+            color: white;
+            background: linear-gradient(to bottom, rgba(44, 85, 48, 0.8), transparent);
+        }
+
+        .logo {
+            font-size: 5rem;
+            color: #fff;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 0.8rem 2rem;
+            margin: -2.5rem auto 3rem;
+            width: fit-content;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #2C5530;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease, transform 0.2s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #8B4513;
+            transform: translateY(-2px);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #8B4513;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .main-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 3px solid #8B4513;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            color: #2C5530;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #6B8E23;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            color: #4A7C59;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .section h4 {
+            font-size: 1.4rem;
+            color: #6B8E23;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 1.5rem 0;
+            display: block;
+        }
+        
+        .section-content ol, .section-content ul {
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .warning {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            color: #721c24;
+        }
+        
+        .warning h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            color: #dc3545;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            opacity: 0.8;
+            margin-top: 3rem;
+        }
+
+        .footer a {
+            color: #98D982;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+            .main-content {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">🎨</div>
+            <h1>
+                <i class="fas fa-book"></i>
+                使用說明
+            </h1>
+            <p class="subtitle">Minecraft 貼圖大師 v0.9.1 使用手冊</p>
+        </header>
+
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> 首頁</a>
+            <a href="app-download-page.html"><i class="fas fa-download"></i> 下載</a>
+            <a href="guide.html"><i class="fas fa-book"></i> 使用說明</a>
+            <a href="https://forms.gle/4jPjR78tJ1E9f2L4A" target="_blank"><i class="fas fa-bug"></i> 錯誤回報</a>
+            <a href="https://forms.gle/q5p12c2292f2L2D48" target="_blank"><i class="fas fa-lightbulb"></i> 功能建議</a>
+        </nav>
+
+        <div class="main-content">
+            <div class="section">
+                <h2>簡介</h2>
+                <p>
+                    <b>Minecraft 貼圖大師 v0.9.1</b> 是一個專為 Minecraft 材質包設計的像素藝術編輯器，支援多分頁編輯、像素級精細操作、圖像變換、主題切換等功能。本手冊將詳細介紹如何使用此工具，幫助您快速創建或編輯 Minecraft 材質貼圖。
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>1. 介面介紹</h2>
+                <div class="section-content">
+                    <p>啟動程式後，您將看到以下主介面：</p>
+                    <img src="https://hackmd.io/_uploads/BkQJ4ydseg.png" alt="主介面">
+                    <ul>
+                        <li><b>左上角功能列</b>：提供檔案操作、編輯、圖像變換和設定選單。</li>
+                        <li><b>左側邊欄</b>：包含編輯工具和顏色調整功能。</li>
+                        <li><b>右側編輯區</b>：顯示當前開啟的圖像（若無開啟檔案則為空白）。</li>
+                        <li><b>右下角儲存按鈕</b>：快速儲存當前圖像。</li>
+                        <li><b>右上角主題切換按鈕</b>：月亮圖示（🌙）用於切換亮/暗主題。
+                            <ul>
+                                <li><b>注意</b>：暗色主題目前不穩定，建議使用預設亮色主題。</li>
+                            </ul>
+                        </li>
+                        <li><b>底部狀態列</b>：顯示操作資訊（如縮放比例、檔案狀態等）。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>2. 檔案操作</h2>
+                <div class="section-content">
+                    <h3>2.1 開啟檔案</h3>
+                    <ol>
+                        <li>點擊功能列「檔案 > 開啟檔案」或使用快捷鍵 <code>Ctrl + O</code>。</li>
+                        <li>選擇 PNG 格式檔案（目前僅支援 PNG）。</li>
+                        <li>若檔案尺寸非 16×16（Minecraft 標準貼圖尺寸），會顯示以下提示：<br>
+                        <img src="https://hackmd.io/_uploads/HJYYrydigg.png" alt="尺寸提示"><br>
+                        <ul>
+                            <li><b>是</b>：將圖像縮放至 16×16，適合快速生成貼圖雛型。例如：<br>
+                            - 原圖（非 16×16）：<br>
+                            <img src="https://hackmd.io/_uploads/SJtUUJOjel.png" alt="星星原圖"><br>
+                            - 縮放後（16×16）：<br>
+                            <img src="https://hackmd.io/_uploads/BJpdLJujll.png" alt="縮放後星星"></li>
+                            <li><b>否</b>：保留原始尺寸，適合生物貼圖等非標準尺寸。</li>
+                            <li><b>取消</b>：取消開啟操作。</li>
+                        </ul></li>
+                    </ol>
+
+                    <h3>2.2 建立新圖片</h3>
+                    <ol>
+                        <li>點擊功能列「檔案 > 建立圖片」或使用快捷鍵 <code>Ctrl + N</code>。</li>
+                        <li>彈出對話框，提供預設尺寸選項：<br>
+                        <ul>
+                            <li><b>Minecraft 物品/方塊 (16×16)</b>：標準物品或方塊貼圖。</li>
+                            <li><b>Minecraft 效果圖示 (18×18)</b>：效果圖示貼圖。</li>
+                            <li><b>Minecraft 貼圖動畫 (16×16n)</b>：動畫貼圖，需指定幀數。</li>
+                            <li><b>自訂</b>：輸入自訂寬度和高度。</li>
+                        </ul></li>
+                        <li>點擊「確定」後，將在新分頁創建透明圖像。</li>
+                    </ol>
+
+                    <h3>2.3 快速載入範例</h3>
+                    <p>點擊功能列「檔案 > 快速載入範例」。載入一個 16×16 的範例圖像，適合練習操作：<br>
+                    <img src="https://hackmd.io/_uploads/Sybouk_oex.png" alt="範例圖像"></p>
+
+                    <h3>2.4 儲存檔案</h3>
+                    <p>點擊右下角「儲存圖片」按鈕或使用快捷鍵 <code>Ctrl + S</code>。若檔案已有路徑，則直接儲存；否則，彈出檔案選擇對話框，預設檔名為分頁標題（去掉「*」）。儲存格式僅支援 PNG。</p>
+
+                    <h3>2.5 關閉分頁</h3>
+                    <p>點擊功能列「檔案 > 關閉分頁」或使用快捷鍵 <code>Ctrl + W</code>。若分頁有未儲存變更，會提示是否儲存。</p>
+
+                    <h3>2.6 儲存所有分頁</h3>
+                    <p>點擊功能列「檔案 > 儲存所有」或使用快捷鍵 <code>Ctrl + Shift + S</code>，儲存所有有變更的分頁。</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>3. 編輯操作</h2>
+                <div class="section-content">
+                    <h3>3.1 縮放</h3>
+                    <p>在編輯區使用滑鼠滾輪進行縮放：向上滾動放大（最大 5000%），向下滾動縮小（最小 1%）。縮放比例顯示於底部狀態列。</p>
+
+                    <h3>3.2 編輯工具</h3>
+                    <p>左側邊欄提供以下編輯工具：<br>
+                    <img src="https://hackmd.io/_uploads/Skk_YJ_jxe.png" alt="編輯工具欄"></p>
+                    <h4>3.2.1 畫筆</h4>
+                    <ul>
+                        <li><b>功能</b>：繪製像素或線條。</li>
+                        <li><b>顏色</b>：點擊「選擇顏色」按鈕選擇顏色，選定後按鈕邊框顯示當前顏色：<br>
+                        <img src="https://hackmd.io/_uploads/rJKM9y_sgg.png" alt="紅色畫筆"></li>
+                        <li><b>粗細</b>：使用「畫筆粗細」滑桿調整（1 到 10）。</li>
+                        <li><b>預覽</b>：勾選「顯示畫筆預覽圓圈」顯示滑鼠位置的虛線圓。</li>
+                    </ul>
+                    <h4>3.2.2 滴管</h4>
+                    <ul>
+                        <li><b>功能</b>：選取圖像中某像素的顏色，選定後自動切回畫筆工具。</li>
+                    </ul>
+                    <h4>3.2.3 橡皮擦</h4>
+                    <ul>
+                        <li><b>功能</b>：擦除像素（設為透明），粗細由「畫筆粗細」滑桿控制。</li>
+                    </ul>
+                    <h4>3.2.4 填滿</h4>
+                    <ul>
+                        <li><b>功能</b>：將點擊處及相鄰的相似顏色像素填充為選定顏色。</li>
+                        <li><b>容差值</b>：使用「容差值」滑桿（0 到 255）調整顏色相似度。</li>
+                    </ul>
+                    <h4>3.2.5 移動</h4>
+                    <ul>
+                        <li><b>功能</b>：移動選取區域的內容。</li>
+                    </ul>
+                    <h4>3.2.6 複製與貼上</h4>
+                    <ul>
+                        <li><b>複製</b>：選擇「複製」或使用 <code>Ctrl + C</code>。</li>
+                        <li><b>貼上</b>：選擇「貼上」或使用 <code>Ctrl + V</code>，顯示貼上預覽：<br>
+                        <img src="https://hackmd.io/_uploads/HJVT-xuixl.png" alt="貼上預覽"></li>
+                        <li><b>操作</b>：移動滑鼠調整位置，左鍵點擊、按 <code>Enter</code> 確認，按 <code>ESC</code> 取消。</li>
+                    </ul>
+                    <h4>3.2.7 圖像變換</h4>
+                    <ul>
+                        <li>提供<b>水平翻轉</b>、<b>垂直翻轉</b>、<b>順時針/逆時針旋轉 90°</b>、以及<b>重置編輯</b>功能。</li>
+                    </ul>
+                    <h4>3.2.8 復原與重做</h4>
+                    <ul>
+                        <li><b>復原</b>：點擊「復原」或使用 <code>Ctrl + Z</code>。</li>
+                        <li><b>重做</b>：點擊「重做」或使用 <code>Ctrl + Y</code>。</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>4. 選取機制</h2>
+                <div class="section-content">
+                    <h3>4.1 像素選擇器</h3>
+                    <ul>
+                        <li><b>開啟</b>：點擊功能列「編輯 > 開啟像素選擇器」。</li>
+                        <li><b>介面</b>：顯示 32 倍放大視圖，紅框標示選取像素：<br>
+                        <img src="https://hackmd.io/_uploads/rkx1T1diex.png" alt="像素選擇器"></li>
+                        <li><b>操作</b>：左鍵切換單個像素選取，右鍵拖曳框選並反轉。</li>
+                        <li><b>功能</b>：提供全選、取消全選、反轉選擇。</li>
+                    </ul>
+
+                    <h3>4.2 選擇區域顯示</h3>
+                    <ul>
+                        <li>在編輯區，選取區域以青色虛線框顯示。例如：<br>
+                        <img src="https://hackmd.io/_uploads/HyYJxgusel.png" alt="選擇區域"></li>
+                    </ul>
+
+                    <h3>4.3 顏色變換</h3>
+                    <ul>
+                        <li><b>功能</b>：調整選取區域的顏色（RGB、亮度、透明度）或轉為灰階。</li>
+                        <li><b>操作</b>：點擊功能列「圖像轉換 > 顏色變換」，調整側邊欄的滑桿。</li>
+                        <li><b>範例</b>：將鐵錠貼圖添加藍色調：<br>
+                        - 原圖：<br>
+                        <img src="https://hackmd.io/_uploads/rkvbmx_oll.png" alt="鐵錠原圖"><br>
+                        - 調整藍色 +25：<br>
+                        <img src="https://hackmd.io/_uploads/B1ccXxuiee.png" alt="藍色調整"><br>
+                        - 結果：<br>
+                        <img src="https://hackmd.io/_uploads/By0nQlOsex.png" alt="藍色鐵錠"></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>5. 注意事項</h2>
+                <div class="section-content">
+                    <ul>
+                        <li><b>Beta 版限制</b>：程式為 Beta 版，可能存在錯誤或不穩定情況。</li>
+                        <li><b>圖像尺寸</b>：Minecraft 材質包通常為 16×16，建議優先使用此尺寸。</li>
+                        <li><b>檔案格式</b>：目前僅支援 PNG 格式。</li>
+                        <li><b>效能</b>：對於大型圖像或頻繁操作，可能出現延遲，建議儲存後重新開啟。</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2025 Minecraft 貼圖大師。 版權所有。</p>
+            <p>本專案非官方 Minecraft 產品，未經 Mojang AB 認可或與之相關聯。</p>
+        </footer>
+    </div>
+</body>
+</html>
