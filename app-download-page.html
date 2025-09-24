@@ -30,6 +30,51 @@
             margin-bottom: 3rem;
             color: white;
         }
+        
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 0.8rem 2rem;
+            margin: -2.5rem auto 3rem;
+            width: fit-content;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #2C5530;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease, transform 0.2s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #8B4513;
+            transform: translateY(-2px);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #8B4513;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
 
         .app-icon {
             font-size: 4rem;
@@ -63,6 +108,21 @@
             margin-bottom: 2rem;
             border: 3px solid #8B4513;
         }
+        
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            border-bottom: 3px solid #6B8E23;
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
         .download-section {
             text-align: center;
@@ -84,7 +144,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-bottom: 2rem;
         }
 
         .download-card {
@@ -143,48 +202,6 @@
 
         .installer-btn:hover {
             box-shadow: 0 12px 25px rgba(139, 69, 19, 0.6);
-        }
-
-        .section {
-            margin-bottom: 3rem;
-        }
-
-        .section h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: #333;
-            border-bottom: 3px solid #6B8E23;
-            padding-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .feature-card {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            border-left: 5px solid #6B8E23;
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: #6B8E23;
-            margin-bottom: 1rem;
         }
 
         .version-card {
@@ -279,57 +296,6 @@
             font-weight: bold;
         }
 
-        .system-requirements {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .warning {
-            background: #f8d7da;
-            border: 2px solid #dc3545;
-            border-radius: 15px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            color: #721c24;
-        }
-
-        .warning h3 {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-            color: #dc3545;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .stat-card {
-            background: linear-gradient(135deg, #6B8E23 0%, #8FBC8F 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            opacity: 0.9;
-            font-size: 1rem;
-        }
-
         .footer {
             text-align: center;
             color: white;
@@ -364,16 +330,6 @@
             .download-options {
                 grid-template-columns: 1fr;
             }
-
-            .version-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-            }
-
-            .version-download {
-                flex-direction: column;
-            }
         }
     </style>
 </head>
@@ -387,19 +343,23 @@
             </h1>
             <p class="subtitle">專為 Minecraft 材質包設計的像素藝術編輯器</p>
         </header>
+        
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> 首頁</a>
+            <a href="app-download-page.html"><i class="fas fa-download"></i> 下載</a>
+            <a href="guide.html"><i class="fas fa-book"></i> 使用說明</a>
+            <a href="https://forms.gle/4jPjR78tJ1E9f2L4A" target="_blank"><i class="fas fa-bug"></i> 錯誤回報</a>
+            <a href="https://forms.gle/q5p12c2292f2L2D48" target="_blank"><i class="fas fa-lightbulb"></i> 功能建議</a>
+        </nav>
 
         <div class="main-card">
-            <div class="warning">
-                <h3><i class="fas fa-exclamation-triangle"></i> 重要提醒</h3>
-                <p><strong>系統需求：</strong>本程式僅支援 <strong>Windows 系統</strong>，且需要安裝 <strong>Java 環境</strong>（JRE/JDK）才能正常運行。</p>
-                <p><strong>版本狀態：</strong>目前為 <strong>Beta 測試版</strong>，可能存在不穩定情況，建議定期儲存作品。</p>
-            </div>
-
             <div class="download-section">
                 <div class="version-info">
                     <i class="fas fa-star"></i> 最新版本 v0.9.1 Beta
                 </div>
                 
+                <p>請選擇適合您的下載方式：</p>
+                <br>
                 <div class="download-options">
                     <div class="download-card">
                         <h3><i class="fas fa-play"></i> 可執行檔版本</h3>
@@ -420,89 +380,20 @@
                     </div>
                 </div>
             </div>
-
-            <div class="system-requirements">
-                <h3><i class="fas fa-desktop"></i> 系統需求</h3>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li style="padding: 0.3rem 0;"><i class="fab fa-windows" style="color: #0078d4; margin-right: 0.5rem;"></i> Windows 7 或更新版本</li>
-                    <li style="padding: 0.3rem 0;"><i class="fab fa-java" style="color: #f89820; margin-right: 0.5rem;"></i> Java Runtime Environment (JRE) 或 JDK</li>
-                    <li style="padding: 0.3rem 0;"><i class="fas fa-memory" style="color: #28a745; margin-right: 0.5rem;"></i> 至少 2GB RAM</li>
-                    <li style="padding: 0.3rem 0;"><i class="fas fa-hdd" style="color: #6c757d; margin-right: 0.5rem;"></i> 50MB 可用磁碟空間</li>
-                </ul>
-            </div>
-
-            <div class="stats">
-                <div class="stat-card">
-                    <div class="stat-number">v0.9.1</div>
-                    <div class="stat-label">當前版本</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">16×16</div>
-                    <div class="stat-label">標準材質尺寸</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">Beta</div>
-                    <div class="stat-label">測試階段</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="main-card">
-            <div class="section">
-                <h2><i class="fas fa-star"></i> 主要功能</h2>
-                <div class="features">
-                    <div class="feature-card">
-                        <div class="feature-icon">🎨</div>
-                        <h3>像素級編輯</h3>
-                        <p>專為 16×16 像素材質設計，支援畫筆、橡皮擦、滴管、填滿等工具</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📑</div>
-                        <h3>多分頁編輯</h3>
-                        <p>同時開啟多個材質檔案，提升工作效率</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔄</div>
-                        <h3>圖像變換</h3>
-                        <p>支援翻轉、旋轉、顏色調整等多種變換操作</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🎯</div>
-                        <h3>精確選取</h3>
-                        <p>像素選擇器提供 32 倍放大檢視，精確編輯每個像素</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🌙</div>
-                        <h3>主題切換</h3>
-                        <p>支援亮色與暗色主題（暗色主題測試中）</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📏</div>
-                        <h3>多種尺寸</h3>
-                        <p>支援 16×16 物品、18×18 效果圖示、動畫材質等</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="main-card">
+            
             <div class="section">
                 <h2><i class="fas fa-history"></i> 版本歷史</h2>
                 
                 <div class="version-card">
                     <div class="version-header">
                         <span class="version-number">版本 0.9.1</span>
-                        <span class="version-date">2025-09-24</span>
-                    </div>
-                    <div class="version-download">
-                        <a href="MinecraftTextureMaster_0.9.1.exe" class="download-link"><i class="fas fa-download"></i> 可執行檔</a>
-                        <a href="MinecraftTextureMasterSetup.exe" class="download-link"><i class="fas fa-download"></i> 安裝檔</a>
+                        <span class="version-date">2025-9-24</span>
                     </div>
                     <div class="changelog">
                         <h3>更新日誌</h3>
                         <ul>
-                            <li><i class="fas fa-bug"></i> 修正了部分小錯誤。</li>
                             <li><i class="fas fa-tools"></i> 採用功能列介面，並調整頁籤顯示。</li>
+                            <li><i class="fas fa-bug"></i> 修正了部分小錯誤。</li>
                         </ul>
                     </div>
                 </div>
