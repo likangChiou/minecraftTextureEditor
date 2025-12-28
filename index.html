@@ -3,337 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft 貼圖大師 - 官方網站</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #4A7C59 0%, #6B8E23 50%, #8FBC8F 100%);
-            min-height: 100vh;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        header {
-            text-align: center;
-            padding: 3rem 0;
-            color: white;
-            background: linear-gradient(to bottom, rgba(44, 85, 48, 0.8), transparent);
-        }
-
-        .logo {
-            font-size: 5rem;
-            color: #fff;
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            opacity: 0.9;
-        }
-
-        nav {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 50px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            padding: 0.8rem 2rem;
-            margin: -2.5rem auto 3rem;
-            width: fit-content;
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        nav a {
-            color: #2C5530;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: color 0.3s ease, transform 0.2s ease;
-            position: relative;
-        }
-
-        nav a:hover {
-            color: #8B4513;
-            transform: translateY(-2px);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: #8B4513;
-            transform-origin: bottom right;
-            transition: transform 0.25s ease-out;
-        }
-
-        nav a:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-
-        .main-content {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            border: 3px solid #8B4513;
-        }
-
-        .section {
-            margin-bottom: 3rem;
-        }
-
-        .section h2 {
-            font-size: 2.5rem;
-            color: #2C5530;
-            margin-bottom: 1.5rem;
-            border-bottom: 3px solid #6B8E23;
-            display: inline-block;
-            padding-bottom: 0.5rem;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .intro {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            background: linear-gradient(135deg, #6B8E23 0%, #8FBC8F 100%);
-            color: white;
-            padding: 1.2rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(107, 142, 35, 0.4);
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(107, 142, 35, 0.6);
-        }
-        
-        .system-requirements, .warning {
-            border: 2px solid;
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .warning {
-            background: #f8d7da;
-            border-color: #dc3545;
-            color: #721c24;
-        }
-        
-        .system-requirements {
-            background: #fff3cd;
-            border-color: #ffc107;
-            color: #856404;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            border-left: 5px solid #6B8E23;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: #6B8E23;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
-            color: #2C5530;
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer {
-            text-align: center;
-            color: white;
-            opacity: 0.8;
-            margin-top: 3rem;
-        }
-
-        .footer a {
-            color: #98D982;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            h1 {
-                font-size: 2.5rem;
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            .subtitle {
-                font-size: 1.2rem;
-            }
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1.5rem;
-                border-radius: 20px;
-            }
-            .main-content {
-                padding: 2rem;
-            }
-        }
-    </style>
+    <title>Pixigraphia - 專業像素編輯器</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">🎨</div>
-            <h1>
-                <i class="fas fa-cube"></i>
-                Minecraft 貼圖大師
-            </h1>
-            <p class="subtitle">專為 Minecraft 材質包設計的像素藝術編輯器</p>
-        </header>
 
-        <nav>
-            <a href="index.html"><i class="fas fa-home"></i> 首頁</a>
-            <a href="app-download-page.html"><i class="fas fa-download"></i> 下載</a>
-            <a href="guide.html"><i class="fas fa-book"></i> 使用說明</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScwkkrKLCuGkKYJ1gPtY0_QZ3KdvKOBRbvPURAjz5-oI06nzQ/viewform?usp=header" target="_blank"><i class="fas fa-bug"></i> 錯誤回報</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfyAod6vVINRLrikuu-LV5HcUKGkJdjd3W9o3eE8clgxALHzQ/viewform?usp=header" target="_blank"><i class="fas fa-lightbulb"></i> 功能建議</a>
-        </nav>
-
-        <div class="main-content">
-            <div class="section section-header">
-                <h2>簡介</h2>
-                <p class="intro">
-                    「Minecraft 貼圖大師」是一款輕巧且強大的像素藝術編輯器，專為 Minecraft 材質包創作者量身打造。無論您是想修改現有材質，還是從零開始創作全新的像素藝術，本程式都能提供您所需的工具，讓創作變得更加簡單有趣。
-                </p>
-                
-                <div class="cta-buttons">
-                    <a href="app-download-page.html" class="cta-btn">
-                        <i class="fas fa-download"></i> 立即下載
-                    </a>
-                </div>
-            </div>
-            
-            <div class="warning">
-                <h3><i class="fas fa-exclamation-triangle"></i> 重要提醒</h3>
-                <p><strong>系統需求：</strong>本程式僅支援 <strong>Windows 系統</strong>，且需要安裝 <strong>Java 環境</strong>（JRE/JDK）才能正常運行。</p>
-                <p><strong>版本狀態：</strong>目前為 <strong>Beta 測試版</strong>，可能存在不穩定情況，建議定期儲存作品。</p>
-            </div>
-            
-            <div class="section">
-                <h2><i class="fas fa-star"></i> 主要功能</h2>
-                <div class="features">
-                    <div class="feature-card">
-                        <div class="feature-icon">🎨</div>
-                        <h3>像素級編輯</h3>
-                        <p>專為 16×16 像素材質設計，支援畫筆、橡皮擦、滴管、填滿等工具</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📑</div>
-                        <h3>多分頁編輯</h3>
-                        <p>同時開啟多個材質檔案，提升工作效率</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔄</div>
-                        <h3>圖像變換</h3>
-                        <p>支援翻轉、旋轉、顏色調整等多種變換操作</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🎯</div>
-                        <h3>精確選取</h3>
-                        <p>像素選擇器提供 32 倍放大檢視，精確編輯每個像素</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🌙</div>
-                        <h3>主題切換</h3>
-                        <p>支援亮色與暗色主題（暗色主題測試中）</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📏</div>
-                        <h3>多種尺寸</h3>
-                        <p>支援 16×16 物品、18×18 效果圖示、動畫材質等</p>
-                    </div>
-                </div>
-            </div>
+    <nav>
+        <a href="index.html" class="logo">Pixigraphia</a>
+        <div class="nav-links">
+            <a href="index.html">首頁</a>
+            <a href="download.html">下載</a>
+            <a href="#footer">聯絡我們</a>
         </div>
+    </nav>
 
-        <footer class="footer">
-            <p>&copy; 2025 Minecraft 貼圖大師。 版權所有。</p>
-            <p>本專案非官方 Minecraft 產品，未經 Mojang AB 認可或與之相關聯。</p>
-        </footer>
+    <div class="container">
+        
+        <section class="hero">
+            <h1>Pixigraphia v0.9.4</h1>
+            <p>專為 Minecraft 材質包設計的專業像素藝術編輯器。<br>輕量、強大，支援圖層系統與深度像素操作。</p>
+            <div style="margin-top: 2rem;">
+                <a href="download.html" class="btn btn-primary">立即下載</a>
+            </div>
+        </section>
+
+        <h2 style="text-align: center; margin-bottom: 1rem;">核心功能</h2>
+        <section class="features">
+            <div class="feature-card">
+                <h3>🔳 選取系統</h3>
+                <p>強大的選取系統，讓你決定每個像素是否被選取。</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎚️ 顏色變換</h3>
+                <p>顏色變換功能，輕鬆修改原版圖片！</p>
+            </div>
+            <div class="feature-card">
+                <h3>📚 圖層系統</h3>
+                <p>支援完整圖層堆疊、顯示/隱藏控制、幻影模式（半透明預覽）以及圖層合併功能。</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔍 深度像素操作</h3>
+                <p>不只是繪圖。精確編輯每個像素的 R、G、B、A 數值，適合高精度材質調整。</p>
+            </div>
+            <div class="feature-card">
+                <h3>🕵️ 隱寫術工具</h3>
+                <p>內建 LSB 編碼與解碼功能，可在像素圖片中隱藏文字資訊，並支援隨機雜訊洗除。</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎨 專屬調色盤</h3>
+                <p>針對像素藝術優化的調色板，支援 Minecraft 物品與方塊的標準尺寸預設。</p>
+            </div>
+        </section>
+
     </div>
+
+    <footer id="footer">
+        <div class="footer-links" style="margin-bottom: 1rem;">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScwkkrKLCuGkKYJ1gPtY0_QZ3KdvKOBRbvPURAjz5-oI06nzQ/viewform" target="_blank">🐛 回報錯誤</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfyAod6vVINRLrikuu-LV5HcUKGkJdjd3W9o3eE8clgxALHzQ/viewform" target="_blank">💡 功能建議</a>
+        </div>
+        <p>&copy; 2025 louischiou Inc. Built with Java Swing.</p>
+    </footer>
+
 </body>
 </html>

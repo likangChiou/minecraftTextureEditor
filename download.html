@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下載 Pixigraphia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Pixigraphia</a>
+        <div class="nav-links">
+            <a href="index.html">首頁</a>
+            <a href="download.html" style="color: var(--accent);">下載</a>
+            <a href="index.html#footer">聯絡我們</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <h1 style="margin-bottom: 1.5rem;">下載中心</h1>
+
+        <div class="version-card">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <h2 style="margin: 0;">Pixigraphia v0.9.4 <span class="version-badge">Latest</span></h2>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">發布日期：2025/12/25</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 1rem;">包含全新的圖層系統與介面優化。請根據您的需求選擇下載格式。</p>
+            
+            <div class="download-options">
+                <a href="./Pixigraphia.exe" class="btn btn-primary" download>
+                    📥 下載可執行檔 (.exe)
+                </a>
+                <a href="./Pixigraphia.jar" class="btn btn-secondary" download>
+                    ☕ 下載 Runnable JAR
+                </a>
+            </div>
+            <p style="font-size: 0.85rem; color: #ff6b6b; margin-top: 0.8rem;">
+                ⚠️ 注意：即使是可執行檔，您的電腦仍需安裝 <a href="https://www.oracle.com/java/technologies/downloads/" target="_blank" style="color:#ff6b6b; text-decoration: underline;">Java JDK / JRE</a> 才能運行。
+            </p>
+        </div>
+
+        <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">版本歷史</h3>
+        
+        <ul class="history-list">
+            <li class="history-item latest">
+                <span class="version-title">v0.9.4 <span class="version-date">2025/12/25</span></span>
+                <p>新增圖層系統（支援新增、刪除、合併、幻影模式），修復暗色模式介面顯示問題。</p>
+            </li>
+            
+            <li class="history-item">
+                <span class="version-title">v0.9.3 <span class="version-date">2025/12/17</span></span>
+                <p>增加像素操作功能（深度編輯、隱寫術），修復縮放功能缺陷。</p>
+            </li>
+            
+            <li class="history-item">
+                <span class="version-title">v0.9.2 <span class="version-date">2025/10/1</span></span>
+                <p>加入魔術套索選擇工具，修復檔案未儲存時標題星號顯示錯誤。</p>
+            </li>
+            
+            <li class="history-item">
+                <span class="version-title">v0.9.1 <span class="version-date">2025/9/20</span></span>
+                <p>介面重構：採用功能列介面 (Menu Bar)，並調整分頁籤顯示方式。</p>
+            </li>
+        </ul>
+
+    </div>
+
+    <footer id="footer">
+        <div class="footer-links" style="margin-bottom: 1rem;">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScwkkrKLCuGkKYJ1gPtY0_QZ3KdvKOBRbvPURAjz5-oI06nzQ/viewform" target="_blank">🐛 回報錯誤</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfyAod6vVINRLrikuu-LV5HcUKGkJdjd3W9o3eE8clgxALHzQ/viewform" target="_blank">💡 功能建議</a>
+        </div>
+        <p>&copy; 2025 louischiou Inc. Built with Java Swing.</p>
+    </footer>
+
+</body>
+</html>
