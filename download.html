@@ -47,7 +47,7 @@
         <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">版本歷史</h3>
         
         <ul class="history-list">
-            <li class="history-item latest">
+            <li class="history-item latest christmas-egg" onclick="triggerChristmasSurprise()" style="cursor: pointer;">
                 <span class="version-title">v0.9.4 <span class="version-date">2025/12/25</span></span>
                 <p>新增圖層系統（支援新增、刪除、合併、幻影模式），修復暗色模式介面顯示問題。</p>
             </li>
@@ -77,6 +77,43 @@
         </div>
         <p>&copy; 2025 louischiou Inc. Built with Java Swing.</p>
     </footer>
+
+    <script>
+    function triggerChristmasSurprise() {
+        // 1. 彈出祝福
+        alert("🎄 聖誕快樂！您發現了 0.9.4 版的秘密驚喜！感謝您在節日期間的支持。");
+
+        // 2. 簡單的「噴發雪花」效果 (Emoji 版)
+        for (let i = 0; i < 20; i++) {
+            createSnowflake();
+        }
+    }
+
+    function createSnowflake() {
+        const snow = document.createElement('div');
+        snow.innerHTML = ['❄️', '🎄', '🎁', '✨'][Math.floor(Math.random() * 4)];
+        snow.style.position = 'fixed';
+        snow.style.top = '-20px';
+        snow.style.left = Math.random() * window.innerWidth + 'px';
+        snow.style.fontSize = (Math.random() * 20 + 10) + 'px';
+        snow.style.zIndex = '1000';
+        snow.style.transition = 'transform 3s linear, opacity 3s linear';
+        snow.style.pointerEvents = 'none';
+
+        document.body.appendChild(snow);
+
+        // 讓雪花掉下來
+        setTimeout(() => {
+            snow.style.transform = `translate(${Math.random() * 100 - 50}px, ${window.innerHeight + 50}px) rotate(${Math.random() * 360}deg)`;
+            snow.style.opacity = '0';
+        }, 10);
+
+        // 移除元素
+        setTimeout(() => {
+            snow.remove();
+        }, 3000);
+    }
+    </script>
 
 </body>
 </html>

@@ -229,3 +229,34 @@ footer {
     color: var(--accent);
     text-decoration: underline;
 }
+
+/* 聖誕彩蛋專屬樣式 */
+.christmas-egg {
+    position: relative;
+    border: 1px dashed transparent;
+    transition: all 0.5s ease;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.christmas-egg:hover {
+    border-color: #ff4d4d; /* 聖誕紅 */
+    background: rgba(255, 77, 77, 0.05);
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.2);
+}
+
+/* 讓 0.9.4 的 Latest 標籤在滑鼠移過時變成聖誕老人 */
+.christmas-egg:hover .version-badge::after {
+    content: " 🎅";
+}
+
+/* 簡單的閃爍動畫 */
+@keyframes festive-glow {
+    0% { color: var(--accent); }
+    50% { color: #ff4d4d; }
+    100% { color: #2ecc71; } /* 聖誕綠 */
+}
+
+.christmas-egg:hover .version-title {
+    animation: festive-glow 1s infinite;
+}
