@@ -1,244 +1,489 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-TW">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>下載 Pixigraphia</title>
-    <meta name="description" content="下載 Pixigraphia - 專業像素藝術編輯器。支援圖層系統、深度像素操作、隱寫術工具。">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="icon.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>下載 Pixigraphia - 專業像素藝術編輯器</title>
+  <meta name="description" content="下載最新版 Pixigraphia 像素藝術編輯器，支援 Windows、Ubuntu 及跨平台 JAR。" />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
+  <div class="page-wrap pixel-grid-bg noise-overlay">
 
-    <nav>
-        <a href="index.html" class="logo">Pixigraphia</a>
+    <!-- ====== NAVBAR ====== -->
+    <nav class="navbar" id="navbar">
+      <div class="navbar-inner">
+        <a href="index.html" class="logo-link">
+          <div class="logo-icon-wrap">
+            <img src="icon.png" alt="Pixigraphia" />
+            <div class="logo-glow"></div>
+          </div>
+          <span class="logo-text"><span class="white">Pixi</span><span class="purple">graphia</span></span>
+        </a>
         <div class="nav-links">
-            <a href="index.html">首頁</a>
-            <a href="download.html" style="color: var(--accent);">下載</a>
-            <a href="index.html#footer">聯絡我們</a>
+          <a href="index.html" class="nav-link">首頁</a>
+          <div class="nav-divider"></div>
+          <a href="download.html" class="btn-download-nav">下載</a>
         </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="選單">
+          <svg id="menuIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="closeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" style="display:none">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+          <a href="index.html" class="mobile-nav-link">首頁</a>
+          <a href="download.html" class="btn-download-mobile">下載</a>
+        </div>
+      </div>
     </nav>
 
-    <div class="container">
+    <!-- ====== HERO ====== -->
+    <section class="download-hero">
+      <div class="download-hero-bg"></div>
+      <div class="download-hero-content">
+        <div class="download-badge">
+          <span class="badge-dot-green pulse-dot"></span>
+          最新版本：v1.0.3
+        </div>
+        <h1>下載 Pixigraphia</h1>
+        <p>取得最新版專業像素藝術編輯器。支援 Windows、Ubuntu 及跨平台 Runnable JAR。</p>
+        <p class="detected-os" id="detectedOS" style="display:none">
+          我們偵測到您正在使用 <span class="os-name" id="osName"></span>。
+        </p>
+      </div>
+    </section>
 
-        <!-- Download Hero -->
-        <section class="download-hero">
-            <div class="download-hero-icon">
-                <img src="icon.png" alt="Pixigraphia Icon" width="96" height="96">
-            </div>
-            <div class="download-hero-text">
-                <h1>Pixigraphia <span class="version-badge">v1.0.3</span></h1>
-                <p class="download-hero-tagline">專為 Minecraft 材質包設計的專業像素藝術編輯器</p>
-            </div>
-        </section>
+    <!-- ====== DOWNLOAD CARDS ====== -->
+    <section class="platforms-section">
+      <div class="container-sm">
+        <div class="platforms-grid" id="platformsGrid">
 
-        <!-- Latest Version Card -->
-        <div class="version-card">
-            <div class="version-card-header">
-                <div>
-                    <div class="version-card-title">
-                        <h2>Pixigraphia v1.0.3 Standard</h2>
-                        <span class="version-badge">Latest</span>
-                    </div>
-                    <p class="version-card-date">發布日期：2026/3/21</p>
-                </div>
-            </div>
+          <!-- Windows -->
+          <div class="platform-card reveal" id="cardWindows" data-os="Windows">
+            <h3>Windows</h3>
+            <p>原生 Windows 執行檔，支援 Windows 10 及更新版本。免安裝──直接執行 .exe 即可使用。</p>
 
-            <div class="version-card-body">
-                <p class="version-card-desc">最新版本，包含多項功能強化與新增工具。請根據您的需求選擇下載格式。</p>
-
-                <div class="changelog-section">
-                    <h4 class="changelog-title">更新內容</h4>
-                    <ul class="changelog-list">
-                        <li>美化介面與圖示</li>
-                        <li>新增對文言文、LEET、邏輯語、倒反英語的支援</li>
-                        <li>修復畫筆快速移動時筆跡不連續的錯誤</li>
-                    </ul>
-                </div>
+            <div class="platform-icon" id="iconWindows">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8" />
+                <path d="M12 17v4" />
+                <path d="M7 7h4v4H7z" />
+                <path d="M13 7h4v4h-4z" />
+                <path d="M7 13h4v1H7z" />
+                <path d="M13 13h4v1h-4z" />
+              </svg>
             </div>
+            <a href="Pixigraphia_Standard_1.0.3.exe" class="btn-dl-std" id="btnWindows" download>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              下載 Windows 版
+            </a>
+          </div>
 
-            <div class="download-options">
-                <a href="./Pixigraphia_Standard_1.0.3.exe" class="btn btn-download btn-primary" download>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="7 10 12 15 17 10" />
-                        <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="3" width="20" height="14" rx="2" />
-                        <path d="M2 17h20" />
-                        <path d="M6 21h12" />
-                        <path d="M9 17v4" />
-                        <path d="M15 17v4" />
-                    </svg>
-                    Windows (.exe)
-                </a>
-                <a href="./Pixigraphia_Standard_1.0.3" class="btn btn-download btn-secondary" download>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="7 10 12 15 17 10" />
-                        <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <circle cx="12" cy="12" r="4" />
-                        <line x1="12" y1="2" x2="12" y2="8" />
-                        <line x1="12" y1="16" x2="12" y2="22" />
-                        <line x1="2" y1="12" x2="8" y2="12" />
-                    </svg>
-                    Ubuntu
-                </a>
-                <a href="./Pixigraphia_Standard_1.0.3.jar" class="btn btn-download btn-secondary" download>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="7 10 12 15 17 10" />
-                        <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path
-                            d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
-                        <path d="M18 14h-8" />
-                        <path d="M15 18h-5" />
-                        <path d="M10 6h8v4h-8V6Z" />
-                    </svg>
-                    Runnable JAR
-                </a>
-            </div>
+          <!-- Ubuntu -->
+          <div class="platform-card reveal" id="cardUbuntu" data-os="Ubuntu">
+            <h3>Ubuntu</h3>
+            <p>適用於 Ubuntu 發行版的原生 Linux 二進位檔案。執行前請使用 chmod +x 賦予執行權限。</p>
 
-            <div class="system-notice">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <line x1="12" y1="8" x2="12" y2="12" />
-                    <line x1="12" y1="16" x2="12.01" y2="16" />
-                </svg>
-                <span>注意：即使是可執行檔，您的電腦仍需安裝 <a href="https://www.oracle.com/java/technologies/downloads/"
-                        target="_blank">Java JDK / JRE</a> 才能運行。</span>
+            <div class="platform-icon" id="iconUbuntu">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="4" />
+                <line x1="21.17" y1="8" x2="12" y2="8" />
+                <line x1="3.95" y1="6.06" x2="8.54" y2="14" />
+                <line x1="10.88" y1="21.94" x2="15.46" y2="14" />
+              </svg>
             </div>
+            <a href="Pixigraphia_Standard_1.0.3" class="btn-dl-std" id="btnUbuntu" download>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              下載 Ubuntu 版
+            </a>
+          </div>
+
+          <!-- JAR -->
+          <div class="platform-card reveal" id="cardJAR" data-os="JAR">
+            <h3>Runnable JAR</h3>
+            <p>跨平台 Java 封存檔，需要 Java Runtime Environment (JRE) 11 或更新版本，適用於任何支援 Java 的作業系統。</p>
+
+            <div class="platform-icon" id="iconJAR">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 22v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="m16 3.13 2 2 4-4" />
+              </svg>
+            </div>
+            <a href="Pixigraphia_Standard_1.0.3.jar" class="btn-dl-std" id="btnJAR" download>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              下載 JAR（跨平台）
+            </a>
+          </div>
+
         </div>
 
-        <!-- Version History -->
-        <div class="history-section">
-            <h3 class="history-heading">版本歷史</h3>
+        <!-- System Requirements -->
+        <div class="sysreq reveal">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 16v-4" />
+              <path d="M12 8h.01" />
+            </svg>
+            系統需求
+          </h3>
+          <div class="sysreq-grid">
+            <div>
+              <h4>Windows</h4>
+              <ul>
+                <li>Windows 10 或更新版本</li>
+                <li>64 位元處理器</li>
+                <li>最低 4 GB RAM</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Ubuntu</h4>
+              <ul>
+                <li>Ubuntu 20.04 或更新版本</li>
+                <li>64 位元處理器</li>
+                <li>最低 4 GB RAM</li>
+              </ul>
+            </div>
+            <div>
+              <h4>JAR（跨平台）</h4>
+              <ul>
+                <li>Java Runtime Environment 11+</li>
+                <li>任何支援 Java 的作業系統</li>
+                <li>最低 4 GB RAM</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <ul class="history-list">
-                <li class="history-item latest">
-                    <span class="version-title">v1.0.3 <span class="version-date">2026/3/21</span></span>
-                    <p>美化介面與圖示、新增對文言文、LEET、邏輯語、倒反英語的支援、修復畫筆快速移動時筆跡不連續的錯誤</p>
-                </li>
+    <!-- ====== VERSION HISTORY ====== -->
+    <section class="section bg-alt">
+      <div class="container-sm">
+        <div class="section-header">
+          <h2 class="section-title">版本歷史</h2>
+          <p class="section-desc">追蹤 Pixigraphia 每個版本的所有更新、改進與修正。</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-line"></div>
+          <div class="timeline-entries" id="timeline"></div>
+        </div>
+      </div>
+    </section>
 
-                <li class="history-item">
-                    <span class="version-title">v1.0.2 <span class="version-date">2026/2/22</span></span>
-                    <p>像素選擇器整合進編輯視窗、像素精準的選擇區域顯示框、濾鏡預覽、從 MCAssets 自動下載材質、錯誤修復</p>
-                </li>
+    <!-- ====== FEEDBACK ====== -->
+    <section class="section">
+      <div class="container-sm">
+        <div class="feedback-grid">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScwkkrKLCuGkKYJ1gPtY0_QZ3KdvKOBRbvPURAjz5-oI06nzQ/viewform"
+            target="_blank" rel="noopener noreferrer" class="feedback-card reveal">
+            <div class="feedback-icon bug">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
+            </div>
+            <h3>回報問題</h3>
+            <p>發現某些功能運作不正常？請告知我們，以便在下個版本修復。</p>
+            <span class="feedback-link bug">
+              提交問題回報
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScwkkrKLCuGkKYJ1gPtY0_QZ3KdvKOBRbvPURAjz5-oI06nzQ/viewform"
+            target="_blank" rel="noopener noreferrer" class="feedback-card feat reveal">
+            <div class="feedback-icon feat">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <h3>建議功能</h3>
+            <p>有想法能讓 Pixigraphia 更好嗎？我們非常歡迎來自社群的聲音。</p>
+            <span class="feedback-link feat">
+              提交功能建議
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-                <li class="history-item">
-                    <span class="version-title">v1.0.1 <span class="version-date">2026/2/15</span></span>
-                    <p>更強大的選取工具、加入濾鏡功能、效能優化與錯誤修復</p>
-                </li>
-
-                <li class="history-item">
-                    <span class="version-title">v1.0.0 <span class="version-date">2026/1/21</span></span>
-                    <p>介面大更新、支援 PXF 檔案匯出、鏡象功能、多國語言支持</p>
-                </li>
-
-                <li class="history-item">
-                    <span class="version-title">v0.9.5 <span class="version-date">2026/1/1</span></span>
-                    <p>增加動畫編輯器，修復設定顯示問題。</p>
-                </li>
-
-                <li class="history-item christmas-egg" onclick="triggerChristmasSurprise()" style="cursor: pointer;">
-                    <span class="version-title">v0.9.4 <span class="version-date">2025/12/25</span></span>
-                    <p>新增圖層系統（支援新增、刪除、合併、幻影模式），修復暗色模式介面顯示問題。</p>
-                </li>
-
-                <li class="history-item">
-                    <span class="version-title">v0.9.3 <span class="version-date">2025/12/17</span></span>
-                    <p>增加像素操作功能（深度編輯、隱寫術），修復縮放功能缺陷。</p>
-                </li>
-
-                <li class="history-item">
-                    <span class="version-title">v0.9.2 <span class="version-date">2025/10/1</span></span>
-                    <p>加入魔術套索選擇工具，修復檔案未儲存時標題星號顯示錯誤。</p>
-                </li>
-
-                <li class="history-item">
-                    <span class="version-title">v0.9.1 <span class="version-date">2025/9/20</span></span>
-                    <p>介面重構：採用功能列介面 (Menu Bar)，並調整分頁籤顯示方式。</p>
-                </li>
+    <!-- ====== FOOTER ====== -->
+    <footer>
+      <div class="footer-gradient"></div>
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <div class="footer-logo-icon"><img src="icon.png" alt="Pixigraphia" /></div>
+              <span class="footer-logo-text"><span class="white">Pixi</span><span class="purple">graphia</span></span>
+            </div>
+            <p>專為全球 Minecraft 材質創作者及像素藝術家精心打造的專業像素藝術編輯器。</p>
+          </div>
+          <div class="footer-col">
+            <h4>產品</h4>
+            <ul>
+              <li><a href="index.html">功能介紹</a></li>
+              <li><a href="download.html">下載</a></li>
+              <li><a href="index.html#editions">版本比較</a></li>
+              <li><a href="download.html">更新日誌</a></li>
             </ul>
+          </div>
+          <div class="footer-col">
+            <h4>社群</h4>
+            <ul>
+              <li><a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScwkkrKLCuGkKYJ1gPtY0_QZ3KdvKOBRbvPURAjz5-oI06nzQ/viewform"
+                  target="_blank" rel="noopener noreferrer">回報問題</a></li>
+              <li><a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScwkkrKLCuGkKYJ1gPtY0_QZ3KdvKOBRbvPURAjz5-oI06nzQ/viewform"
+                  target="_blank" rel="noopener noreferrer">功能建議</a></li>
+            </ul>
+          </div>
+          <div class="footer-col footer-feedback">
+            <h4>意見回饋</h4>
+            <p>幫助我們改善 Pixigraphia。回報問題或建議新功能。</p>
+            <div class="footer-feedback-btns">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScwkkrKLCuGkKYJ1gPtY0_QZ3KdvKOBRbvPURAjz5-oI06nzQ/viewform"
+                target="_blank" rel="noopener noreferrer" class="btn-feedback-bug">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+                回報問題
+              </a>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScwkkrKLCuGkKYJ1gPtY0_QZ3KdvKOBRbvPURAjz5-oI06nzQ/viewform"
+                target="_blank" rel="noopener noreferrer" class="btn-feedback-feat">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+                建議功能
+              </a>
+            </div>
+          </div>
         </div>
-
-    </div>
-
-    <footer id="footer">
-        <div class="footer-links" style="margin-bottom: 1rem;">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScwkkrKLCuGkKYJ1gPtY0_QZ3KdvKOBRbvPURAjz5-oI06nzQ/viewform"
-                target="_blank">回報錯誤</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfyAod6vVINRLrikuu-LV5HcUKGkJdjd3W9o3eE8clgxALHzQ/viewform"
-                target="_blank">功能建議</a>
+        <div class="footer-bottom">
+          <p>Copyright 2025-2026 louischiou Inc. 版權所有</p>
+          <p>Pixigraphia v1.0.3 &mdash; 由像素藝術家為像素藝術家打造</p>
         </div>
-        <p>&copy; 2025 louischiou Inc. Built with Java Swing.</p>
+      </div>
     </footer>
 
-    <script>
-        function triggerChristmasSurprise() {
-            alert("聖誕快樂！您發現了 0.9.4 版的秘密驚喜！感謝您在節日期間的支持。");
+  </div><!-- .page-wrap -->
 
-            for (let i = 0; i < 25; i++) {
-                setTimeout(() => createSnowflake(), i * 80);
-            }
-        }
+  <script>
+    // ── Navbar scroll ──
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20));
 
-        function createSnowflake() {
-            const size = Math.random() * 16 + 10;
-            const colors = ['#ffffff', '#c8e6ff', '#ff6b6b', '#2ecc71', '#f1c40f'];
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            const opacity = (Math.random() * 0.4 + 0.5).toFixed(2);
+    // ── Mobile menu ──
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    const closeIcon = document.getElementById('closeIcon');
+    mobileToggle.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuIcon.style.display = open ? 'none' : 'block';
+      closeIcon.style.display = open ? 'block' : 'none';
+    });
 
-            // SVG snowflake shapes
-            const shapes = [
-                // Snowflake crystal
-                `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" opacity="${opacity}"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="5.64" y1="5.64" x2="18.36" y2="18.36"/><line x1="18.36" y1="5.64" x2="5.64" y2="18.36"/><line x1="12" y1="2" x2="9" y2="5"/><line x1="12" y1="2" x2="15" y2="5"/><line x1="12" y1="22" x2="9" y2="19"/><line x1="12" y1="22" x2="15" y2="19"/></svg>`,
-                // Star
-                `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="${color}" opacity="${opacity}"><polygon points="12,2 15,9 22,9.5 17,14.5 18.5,22 12,18 5.5,22 7,14.5 2,9.5 9,9"/></svg>`,
-                // Circle ornament
-                `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" opacity="${opacity}"><circle cx="12" cy="14" r="8"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="10" y1="3" x2="14" y2="3"/></svg>`,
-                // Simple tree
-                `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="${color}" opacity="${opacity}"><polygon points="12,2 4,18 20,18"/><rect x="10" y="18" width="4" height="4"/></svg>`
-            ];
+    // ── OS Detection ──
+    (function () {
+      const ua = navigator.userAgent.toLowerCase();
+      let os = '';
+      if (ua.includes('win')) os = 'Windows';
+      else if (ua.includes('linux') || ua.includes('ubuntu')) os = 'Ubuntu';
+      else os = 'JAR';
 
-            const el = document.createElement('div');
-            el.innerHTML = shapes[Math.floor(Math.random() * shapes.length)];
-            el.style.position = 'fixed';
-            el.style.top = '-30px';
-            el.style.left = Math.random() * window.innerWidth + 'px';
-            el.style.zIndex = '1000';
-            el.style.pointerEvents = 'none';
-            el.style.transition = 'transform 3.5s ease-in, opacity 3.5s ease-in';
-            el.style.filter = `drop-shadow(0 0 3px ${color})`;
+      const osEl = document.getElementById('detectedOS');
+      const osName = document.getElementById('osName');
+      osName.textContent = os === 'JAR' ? 'JAR（跨平台）' : os;
+      osEl.style.display = 'block';
 
-            document.body.appendChild(el);
+      // Mark recommended card
+      const cardId = { Windows: 'cardWindows', Ubuntu: 'cardUbuntu', JAR: 'cardJAR' }[os];
+      const iconId = { Windows: 'iconWindows', Ubuntu: 'iconUbuntu', JAR: 'iconJAR' }[os];
+      const btnId = { Windows: 'btnWindows', Ubuntu: 'btnUbuntu', JAR: 'btnJAR' }[os];
 
-            setTimeout(() => {
-                el.style.transform = `translate(${Math.random() * 120 - 60}px, ${window.innerHeight + 60}px) rotate(${Math.random() * 540}deg)`;
-                el.style.opacity = '0';
-            }, 20);
+      const card = document.getElementById(cardId);
+      const icon = document.getElementById(iconId);
+      const btn = document.getElementById(btnId);
 
-            setTimeout(() => {
-                el.remove();
-            }, 4000);
-        }
-    </script>
+      if (card) {
+        card.classList.add('recommended');
+        const badge = document.createElement('div');
+        badge.className = 'platform-rec-badge';
+        badge.textContent = '推薦';
+        card.insertBefore(badge, card.firstChild);
+      }
+      if (icon) icon.classList.add('rec');
+      if (btn) { btn.className = 'btn-dl-rec'; }
+    })();
 
+    // ── Version timeline ──
+    (function () {
+      const versions = [
+        {
+          v: '1.0.3', date: '2026/3/21', tag: 'latest', changes: [
+            '全新 UI 設計，圖示更新，呈現更精緻的使用體驗',
+            '新增文言文、LEET 語、邏輯語及倒反英語語言模式',
+            '修正快速移動游標時筆刷描邊中斷的渲染問題',
+          ]
+        },
+        {
+          v: '1.0.2', date: '2026/2/22', tag: '', changes: [
+            '將像素選擇器直接整合至主編輯器視口，操作更流暢',
+            '實作像素精準的選取範圍顯示，邊框渲染精確',
+            '為所有濾鏡效果新增懸停預覽功能',
+            '引入 MCAssets 材質自動下載，強化 Minecraft 整合',
+            '各項錯誤修正與穩定性提升',
+          ]
+        },
+        {
+          v: '1.0.1', date: '2026/2/15', tag: '', changes: [
+            '強化選取工具精準度，並新增組合選取模式',
+            '引入完整影像濾鏡套件（模糊、銳化、噪點、色調分離等）',
+            '大幅效能優化及全面錯誤修正',
+          ]
+        },
+        {
+          v: '1.0.0', date: '2026/1/21', tag: 'major', changes: [
+            '完整 UI 改版，採用現代化佈局並改善工作流程',
+            '新增 PXF 檔案格式匯出，保留圖層、選取及動畫資料',
+            '引入鏡像模式，支援水平與垂直軸對稱繪圖',
+            '推出多語言支援，提供 10+ 種語言選項',
+          ]
+        },
+        {
+          v: '0.9.5', date: '2026/1/1', tag: '', changes: [
+            '引入內建動畫編輯器，包含時間軸、幀管理及洋蔥皮預覽',
+            '修正設定面板顯示不一致的問題',
+          ]
+        },
+        {
+          v: '0.9.4', date: '2025/12/25', tag: '', changes: [
+            '新增圖層系統，支援新增、刪除、合併、顯示切換及幽靈模式',
+            '修正深色模式介面渲染瑕疵',
+          ]
+        },
+        {
+          v: '0.9.3', date: '2025/12/17', tag: '', changes: [
+            '引入進階像素操作：深度像素編輯模式及隱寫術編碼/解碼',
+            '修正縮放/比例功能缺陷',
+          ]
+        },
+        {
+          v: '0.9.2', date: '2025/10/1', tag: '', changes: [
+            '新增魔術棒選取工具，支援基於容差的顏色區域選取',
+            '修正未儲存檔案的標題列星號指示器',
+          ]
+        },
+        {
+          v: '0.9.1', date: '2025/9/20', tag: '', changes: [
+            '大幅介面重構，採用專業選單列導覽模式',
+            '重新設計索引標籤列，改善多文件管理體驗',
+          ]
+        },
+      ];
+
+      const container = document.getElementById('timeline');
+      versions.forEach((v, i) => {
+        const isLatest = i === 0;
+        const tagHTML = v.tag === 'latest'
+          ? '<span class="version-tag latest-tag">最新</span>'
+          : v.tag === 'major'
+            ? '<span class="version-tag major-tag">重大更新</span>'
+            : '';
+
+        const entry = document.createElement('div');
+        entry.className = 'timeline-entry reveal';
+        entry.style.setProperty('--delay', (i * 80) + 'ms');
+        entry.innerHTML = `
+      <div class="timeline-dot ${isLatest ? 'latest' : ''}">
+        <div class="timeline-dot-inner ${isLatest ? 'latest' : ''}${isLatest ? ' pulse-dot' : ''}"></div>
+      </div>
+      <div class="timeline-card ${isLatest ? 'latest' : ''}">
+        <div class="timeline-card-header">
+          <h3>v${v.v}</h3>
+          <span class="date">${v.date}</span>
+          ${tagHTML}
+        </div>
+        <ul class="timeline-changes">
+          ${v.changes.map(c => `
+            <li class="timeline-change">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/></svg>
+              <span>${c}</span>
+            </li>
+          `).join('')}
+        </ul>
+      </div>
+    `;
+        container.appendChild(entry);
+      });
+    })();
+
+    // ── Intersection Observer: reveal ──
+    (function () {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const delay = el.style.getPropertyValue('--delay') || '0ms';
+            el.style.animationDelay = delay;
+            el.classList.add('in-view');
+            obs.unobserve(el);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    })();
+  </script>
 </body>
 
 </html>
